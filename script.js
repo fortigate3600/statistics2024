@@ -79,6 +79,7 @@ GoButton.addEventListener("click", function () {
   numcampioni += 1;
 
   if (oldm !== m) {
+    oldm = m;
     clearCanvas();
   }
 
