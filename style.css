@@ -13,6 +13,7 @@ body {
 .container {
   justify-content: center;
   text-align: flex-start;
+  max-width: 100%;
 }
 
 .canvasdiv {
