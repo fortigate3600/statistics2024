@@ -10,6 +10,7 @@ let diz = {};
 var maxValue;
 var z;
 var oldm = 50;
+var oldn = 50;
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -76,18 +77,16 @@ GoButton.addEventListener("click", function () {
   n = parseInt(document.getElementById("atks").value);
   path = canvas.width / (m + 1);
   heightpath = canvas.height / m;
-  numcampioni += 1;
-
-  if (oldm !== m) {
+  if (oldm != m || oldn != n) {
     oldm = m;
+    oldn = n;
     clearCanvas();
   }
-
+  numcampioni += 1;
   for (let i = 0; i < n; i++) {
     let nbreach = drawRandomLines();
     sumbreaches += nbreach;
   }
-
   maxValue = Math.max(...Object.values(diz));
   z = 200 / maxValue;
 
