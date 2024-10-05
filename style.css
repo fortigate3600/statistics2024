@@ -30,6 +30,10 @@ canvas {
   background-color: #f0f0f0; /* Sfondo chiaro per distinguere il canvas */
 }
 
+#canvas {
+  border-right: none; /* Rimuovi il bordo destro solo dal primo canvas */
+}
+
 button {
   background-color: #4caf50;
   color: white;
