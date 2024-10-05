@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-wrap: wrap; /* Va a capo se non c'è spazio sufficiente */
+  gap: 10px;
+}
+
+.container {
+  justify-content: center;
+  text-align: flex-start;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100px;
+}
+
+#canvas {
+  border: 2px solid black; /* Bordo di 2px di colore nero */
+  background-color: #f0f0f0; /* Sfondo chiaro per distinguere il canvas */
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#yesButton {
+  left: 75px;
+}
+#noButton {
+  left: 175px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
