@@ -6,6 +6,10 @@ var n;
 var path;
 var heightpath;
 const start = 500;
+let diz = {};
+var maxValue;
+var z;
+var oldm = 50;
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -17,8 +21,6 @@ const ctx2 = canvas2.getContext("2d");
 function getRandomInt() {
   return Math.random();
 }
-
-let diz = {};
 
 // Disegnare un numero definito di linee casuali
 function drawRandomLines() {
@@ -55,6 +57,15 @@ function drawRandomLines() {
   return h / heightpath;
 }
 
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
+  ctx2.clearRect(0, 0, canvas2.width, canvas2.height); // Cancella tutto il secondo canvas
+  sumbreaches = 0;
+  numcampioni = 0;
+  textmediacolpiti.innerText = "";
+  diz = {};
+}
+
 var sumbreaches = 0;
 var numcampioni = 0;
 const textmediacolpiti = document.getElementById("mediacolpiti");
@@ -66,12 +77,17 @@ GoButton.addEventListener("click", function () {
   path = canvas.width / (m + 1);
   heightpath = canvas.height / m;
   numcampioni += 1;
+
+  if (oldm !== m) {
+    clearCanvas();
+  }
+
   for (let i = 0; i < n; i++) {
     let nbreach = drawRandomLines();
     sumbreaches += nbreach;
   }
 
-  const maxValue = Math.max(...Object.values(diz));
+  maxValue = Math.max(...Object.values(diz));
   z = 200 / maxValue;
 
   for (h in diz) {
@@ -87,10 +103,5 @@ GoButton.addEventListener("click", function () {
 });
 
 const clearButton = document.getElementById("clearCanvas");
-clearButton.addEventListener("click", function () {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
-  ctx2.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
-  sumbreaches = 0;
-  numcampioni = 0;
-  textmediacolpiti.innerText = "";
-});
+// Aggiungi l'event listener al pulsante
+clearButton.addEventListener("click", clearCanvas);
