@@ -16,6 +16,15 @@ body {
   max-width: 100%;
 }
 
+.containerimg {
+  width: 80%; /* Imposta la larghezza della div, puoi cambiarla in base alle tue esigenze */
+  margin: 0 auto; /* Centra la div orizzontalmente */
+  display: flex; /* Per allineare le immagini in linea */
+  justify-content: center; /* Centra le immagini nella div */
+  flex-wrap: wrap; /* Permette di andare a capo se non c'è abbastanza spazio */
+  gap: 10px; /* Spazio tra le immagini */
+}
+
 .canvasdiv {
   display: flex;
 }
