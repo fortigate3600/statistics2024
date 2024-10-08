@@ -18,6 +18,9 @@ const ctx = canvas.getContext("2d");
 const canvas2 = document.getElementById("canvas2");
 const ctx2 = canvas2.getContext("2d");
 
+// Richiama la funzione con il valore di 'n' desiderato
+// Cambia il numero 10 con quello che desideri
+
 // Funzione per generare un numero casuale tra min e max
 function getRandomInt() {
   return Math.random();
@@ -64,17 +67,20 @@ function clearCanvas() {
   sumbreaches = 0;
   numcampioni = 0;
   textmediacolpiti.innerText = "";
+  textvarianza.innerText = "";
   diz = {};
 }
-
+var valori = [];
 var sumbreaches = 0;
 var numcampioni = 0;
 const textmediacolpiti = document.getElementById("mediacolpiti");
+const textvarianza = document.getElementById("varianza");
 GoButton.addEventListener("click", function () {
   ctx2.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
   p = parseFloat(document.getElementById("prob").value);
   m = parseInt(document.getElementById("systmes").value);
   n = parseInt(document.getElementById("atks").value);
+
   path = canvas.width / (m + 1);
   heightpath = (canvas.height - 80) / m;
   if (oldm != m || oldn != n) {
@@ -82,9 +88,36 @@ GoButton.addEventListener("click", function () {
     oldn = n;
     clearCanvas();
   }
+
+  var spacing = canvas.width / m;
+  console.log(spacing);
+
+  ctx.font = "10px Arial";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "bottom";
+
+  if (m < 76) {
+    for (let i = 0; i <= m; i++) {
+      ctx.fillText(i, i * spacing - spacing / 2, canvas.height - 10);
+    }
+  } else if (m < 300) {
+    for (let i = 0; i <= m; i += 5) {
+      ctx.fillText(i, i * spacing - spacing / 2, canvas.height - 10);
+    }
+  } else if (m < 700) {
+    for (let i = 0; i <= m; i += 10) {
+      ctx.fillText(i, i * spacing - spacing / 2, canvas.height - 10);
+    }
+  } else {
+    for (let i = 0; i <= m; i += 50) {
+      ctx.fillText(i, i * spacing - spacing / 2, canvas.height - 10);
+    }
+  }
+
   numcampioni += 1;
   for (let i = 0; i < n; i++) {
     let nbreach = drawRandomLines();
+    valori.push(parseInt(nbreach));
     sumbreaches += nbreach;
   }
   maxValue = Math.max(...Object.values(diz));
@@ -98,8 +131,16 @@ GoButton.addEventListener("click", function () {
   }
 
   var mediacolpiti = sumbreaches / (n * numcampioni);
+  var varianza = 0;
+  for (let i = 0; i < valori.length; i++) {
+    varianza += (valori[i] - mediacolpiti) ** 2;
+  }
+  varianza /= valori.length;
+
   textmediacolpiti.innerText =
     "Media sistemi compromessi: " + mediacolpiti.toFixed(2);
+  textvarianza.innerText = "varianza: " + varianza.toFixed(2);
+  console.log(valori);
 });
 
 const clearButton = document.getElementById("clearCanvas");
