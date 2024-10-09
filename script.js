@@ -1,5 +1,6 @@
 const GoButton = document.getElementById("GoButton");
 
+var col = 0;
 var p;
 var m;
 var n;
@@ -28,6 +29,26 @@ function getRandomInt() {
 
 // Disegnare un numero definito di linee casuali
 function drawRandomLines() {
+  if (col == 5) col = 0;
+  switch (col) {
+    case 0:
+      ctx.strokeStyle = "brown";
+      break;
+    case 1:
+      ctx.strokeStyle = "red";
+      break;
+    case 2:
+      ctx.strokeStyle = "blue";
+      break;
+    case 3:
+      ctx.strokeStyle = "darkgreen";
+      break;
+    case 4:
+      ctx.strokeStyle = "purple";
+      break;
+  }
+  col++;
+
   let h = 0;
   //inizio
   ctx.beginPath();
@@ -68,6 +89,7 @@ function clearCanvas() {
   numcampioni = 0;
   textmediacolpiti.innerText = "";
   textvarianza.innerText = "";
+  textmassimi.innerText = "";
   diz = {};
 }
 var valori = [];
@@ -75,6 +97,7 @@ var sumbreaches = 0;
 var numcampioni = 0;
 const textmediacolpiti = document.getElementById("mediacolpiti");
 const textvarianza = document.getElementById("varianza");
+const textmassimi = document.getElementById("massimi");
 GoButton.addEventListener("click", function () {
   ctx2.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
   p = parseFloat(document.getElementById("prob").value);
@@ -90,7 +113,6 @@ GoButton.addEventListener("click", function () {
   }
 
   var spacing = canvas.width / m;
-  console.log(spacing);
 
   ctx.font = "10px Arial";
   ctx.textAlign = "center";
@@ -120,14 +142,22 @@ GoButton.addEventListener("click", function () {
     valori.push(parseInt(nbreach));
     sumbreaches += nbreach;
   }
+  var massimi = [];
   maxValue = Math.max(...Object.values(diz));
   z = 200 / maxValue;
-
   for (h in diz) {
+    if (diz[h] == maxValue) {
+      massimi.push(parseInt(h));
+      ctx2.strokeStyle = "blue";
+    }
+
+    ctx2.lineWidth = 2;
     ctx2.beginPath();
     ctx2.moveTo(0, start - h);
     ctx2.lineTo(z * diz[h], start - h);
     ctx2.stroke();
+
+    ctx2.strokeStyle = "black";
   }
 
   var mediacolpiti = sumbreaches / (n * numcampioni);
@@ -140,7 +170,7 @@ GoButton.addEventListener("click", function () {
   textmediacolpiti.innerText =
     "Media sistemi compromessi: " + mediacolpiti.toFixed(2);
   textvarianza.innerText = "varianza: " + varianza.toFixed(2);
-  console.log(valori);
+  textmassimi.innerText = "moda (in blu): " + massimi.join(", ");
 });
 
 const clearButton = document.getElementById("clearCanvas");
