@@ -1,3 +1,4 @@
+https://www.datatime.eu/public/cybersecurity/Statistics_2024_25/
 each lesson:
     -theory
     -practice
