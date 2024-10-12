@@ -1,0 +1,121 @@
+each lesson:
+    -theory
+    -practice
+
+HMW: during the week, sono circa 12/15
+bisogna fare un blog da mettere online
+
+exam (oral + written kinda):
+oral si fa solo se ti autovauti >=28 o se il prof non pensa che la tua valutazione non sia corretta
+    parlate degli hmw
+written: un tesi(testo) su un tupic "fatta a casa"
+
+
+
+Prima lezione:
+variabili character
+
+P U_i, r=1,...,n   UNIVARIANTE (può essere anche bivariante, multivariante)
+
+peso età  ----------------->  giov mezzeta anziano
+low  giovane             low   2      0       1
+med  anziano             med   0      0       1
+low  anziano             high  0      0       0
+low  giovane
+
+elementi: 2,2,4,2,5,2,3,4,5
+weight x_i: n_i
+2:4, 3:1, 4:2, 5:2
+
+media:
+sum(i=1->k) (x_i * n_i) / sum (i=1->k) n_i
+
+n_j/n relative frequency = la frequenza che quel valore appare, n=sum_i (n_i)
+
+arithmetic avarage: per definizione
+è il punto nel quale la somma delle distanze tra i punti di destra e di sinistra sono uguali
+sum left (mu-x_i) == sum right (x_i - mu) 
+
+numerical stability & catastrphic cancellation:
+una formula computazionalmente equivalente ma che non crei errori:
+quindi si calcola utulizzando il valore di prima:
+mean_n = f(mean_n-1, x_n) = (mean_n-1 * (n-1) + x_n)/n = (mean_n-1 * n - mean_n-1 + x_n)/n =
+= mean_n-1 + (x_n - mean_n-1)/n
+
+
+HMW:
+ricerca:
+-basic notions in statistics populations distributions e statitistic units,
+-notions of avg computanionals problems -> numerical stability & catastrphic cancellation
+codice:
+
+vs -> vb or c# for "winform" 
+vscode -> (js) for "webpage"?
+
+we have n system m attackers
+the hacker has p=0.7% prob of penetrate each sys
+
+make a graphical representation where each atk is represented like a line that is flat if he didnt penetrate the sys and a with a bounce if he 
+
+lines sum up togher
+atk1: ---1---2---n-> sys
+
+         |--------> 1 penetrated, 2 no
+atk1: ---|
+
+parametri = p,m,n
+vogliamo contare quanti systemi prenotati
+
+
+LEZIONE 2
+una statistica è una funzione dei dati f(x1,x2,...,xn) ex: meab(media) sum(x_i)/n
+-location: rapresent the general situations of the values ex: mean
+-dispersion:
+rapresent how much the actual values are close to the mean:
+measure of distance of the mean (or any other location) from the observation
+sum((dist(mean-x_i))^2)/n = variance
+sqrt(variance) = mean sqrt error
+
+2 main branches of statistics
+inference: when i have a subset of a population and i use it to make assumption abount the total popolation
+desciptive: when i have all the information and i make analysis
+
+
+HM2:
+running mean_n: mean_n-1 + (xi - mean_n-1) /n 
+variance: (sum(xi - mean)^2)/n -> dev_n(x)/n 
+running variance:
+  sum(n)(i=1) (xi - mean_n)^2 =
+= sum(n-1)(i=1) (xi - mean_n)^2 + (xn - mean_n)^2 = 
+= sum(n-1)(i=1) (xi - mean_n-1 + mean_n-1 - mean)^2 + (xn - mean)^2 = 
+
+= sum(n-1)(i=1) (xi - mean_n-1) + (mean_n-1 - mean)^2 + (xn - mean)^2 = 
+= dev_n = dev_n-1 + (n-1)(mean_n-1 - mean_n)^2 + (x_n - mean_n)^2 =
+COMPLETARE QUI
+dev_n = dev_n-1 + (x_n - mean_n-1)(x_n - mean_n)
+
+
+for()
+	delta = x_n - mean
+	mean += delta/n
+	deviance += (xn-mean)delta
+
+
+
+this time is +1 -1 se vince/perde la probabilita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
