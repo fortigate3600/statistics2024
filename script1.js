@@ -91,7 +91,6 @@ function clearCanvas() {
   textvarianza.innerText = "";
   textmassimi.innerText = "";
   diz = {};
-  var varianza = 0;
 }
 var valori = [];
 var sumbreaches = 0;

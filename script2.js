@@ -47,7 +47,7 @@ function drawRandomLines() {
       ctx.strokeStyle = "brown";
       break;
     case 1:
-      ctx.strokeStyle = "red";
+      ctx.strokeStyle = "hot pink";
       break;
     case 2:
       ctx.strokeStyle = "blue";
@@ -123,6 +123,20 @@ function istogramma(pos) {
       ctx2.lineTo(z * diz[h], start - h);
       ctx2.stroke();
       ctx2.strokeStyle = "black";
+
+      ctx.strokeStyle = "black";
+      if (diz[h] == maxValue) {
+        massimi.push(parseInt(h));
+        ctx.strokeStyle = "blue";
+      }
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(canvas.width, start - h);
+      ctx.lineTo(canvas.width - (z * diz[h]) / m, start - h);
+      ctx.stroke();
+      ctx.globalAlpha = 0.75;
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "black";
     }
   } else {
     for (h in diztempot) {
@@ -136,7 +150,15 @@ function istogramma(pos) {
       ctx.lineWidth = 4;
       ctx.beginPath();
       ctx.moveTo(pos + path / 2, start - h);
-      ctx.lineTo(10 * diztempot[h] + pos + path / 2, start - h);
+      ctx.lineTo(7 * diztempot[h] + pos + path / 2, start - h);
+      ctx.stroke();
+      ctx.globalAlpha = 0.75;
+      ctx.lineWidth = 2;
+
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(pos + path / 2, start - h);
+      ctx.lineTo(-(10 * diztempot[h]) / t + pos + path / 2, start - h);
       ctx.stroke();
       ctx.globalAlpha = 0.75;
       ctx.lineWidth = 2;
@@ -149,6 +171,8 @@ function clearCanvas() {
   ctx2.clearRect(0, 0, canvas2.width, canvas2.height); // Cancella tutto il secondo canvas
   textmediacolpiti.innerText = "";
   textvarianza.innerText = "";
+  textmediacolpitit.innerText = "";
+  textvarianzat.innerText = "";
   diz = {};
   diztempot = {};
   massimi = [];
@@ -248,17 +272,9 @@ GoButton.addEventListener("click", function () {
   }
   varianza /= n;
 
-  textmediacolpitit.innerText =
-    "Running Mean al tempo t: " +
-    runmeant.toFixed(2) +
-    ", Media al tempo t: " +
-    media.toFixed(2);
+  textmediacolpitit.innerText = "Mean al tempo t: " + runmeant.toFixed(2);
   // La varianza è M2 diviso per il numero di campioni
-  textvarianzat.innerText =
-    "Running Variance al tempo t: " +
-    (m2t / n).toFixed(2) +
-    ", Varianza al temp t: " +
-    varianza.toFixed(2);
+  textvarianzat.innerText = "Variance al tempo t: " + (m2t / n).toFixed(2);
 
   //istogrammi
   istogramma(0);
@@ -274,15 +290,11 @@ GoButton.addEventListener("click", function () {
     for (var i = 0; i < diz[h]; i++) varianza += (h / heightpath - media) ** 2;
   }
   varianza /= n;
+  console.log(varianza);
 
   //stampa statistiche
-  textmediacolpiti.innerText =
-    "Running Mean: " + runningmean.toFixed(2) + ", Media: " + media.toFixed(2);
-  textvarianza.innerText =
-    "Runnig Variance: " +
-    (M2 / n).toFixed(2) +
-    ", Varianza: " +
-    varianza.toFixed(2);
+  textmediacolpiti.innerText = "Mean: " + runningmean.toFixed(2);
+  textvarianza.innerText = "Variance: " + (M2 / n).toFixed(2);
 });
 
 const clearButton = document.getElementById("clearCanvas");
