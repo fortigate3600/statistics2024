@@ -41,121 +41,83 @@
     </div>
 
     <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script2.js"
+          >qui</a
+        >
+      </p>
+    </div>
+    <div class="containerimg">
       <img
-        src="img/img1.png"
+        src="img/dimostrazione.png"
         alt="screenshot not found"
-        width="700"
-        height="400"
-      />
-      <img
-        src="img/img2.png"
-        alt="screenshot not found"
-        width="700"
-        height="400"
-      />
-      <img
-        src="img/img3.png"
-        alt="screenshot not found"
-        width="700"
-        height="400"
-      />
-      <img
-        src="img/img4.png"
-        alt="screenshot not found"
-        width="700"
-        height="400"
+        width="1000"
+        height="1200"
       />
     </div>
 
     <div>
       <header>
-        <h1>Nozioni di Base in Statistica</h1>
+        <h1>Comportamento della Media e della Varianza nel Tempo</h1>
       </header>
       <main>
         <section>
-          <h2>Popolazioni e Distribuzioni</h2>
           <p>
-            In statistica, una popolazione è l'insieme totale di elementi o
-            individui che si desidera studiare. Può includere persone, oggetti,
-            eventi o misurazioni. Ad esempio, se si desidera conoscere l'altezza
-            media degli studenti in una scuola, la popolazione sarà costituita
-            da tutti gli studenti della scuola. Tuttavia, in molti casi, è
-            impraticabile o impossibile raccogliere dati su tutta la
-            popolazione, e per questo motivo si ricorre all'uso di campioni.
-          </p>
-          <p>
-            Le distribuzioni statistiche descrivono come i valori di una
-            variabile sono distribuiti all'interno di una popolazione. Una
-            distribuzione può essere rappresentata graficamente tramite
-            istogrammi o curve di distribuzione. La distribuzione normale è una
-            delle più comuni in statistica e si presenta a forma di campana,
-            caratterizzata dalla simmetria rispetto alla media. Comprendere la
-            distribuzione di una variabile è fondamentale per analizzare i dati
-            e fare inferenze statistiche.
-          </p>
-        </section>
-        <section>
-          <h2>Unità Statistiche</h2>
-          <p>
-            Le unità statistiche sono gli elementi fondamentali di analisi nei
-            dati statistici. Ogni unità rappresenta un'osservazione o un
-            campione all'interno di una popolazione. Ad esempio, se stiamo
-            studiando le abitudini alimentari di un gruppo di persone, ogni
-            individuo è un'unità statistica. È essenziale definire chiaramente
-            le unità statistiche, poiché influenzano i risultati delle analisi e
-            le conclusioni tratte dai dati.
-          </p>
-          <p>
-            Inoltre, le unità statistiche possono essere classificate in diverse
-            categorie, come unità individuali (persone, animali) o unità
-            aggregate (gruppi di individui). La scelta delle unità statistiche
-            appropriate è cruciale per garantire la validità delle inferenze
-            statistiche e la rappresentatività del campione rispetto alla
-            popolazione di interesse.
+            Il comportamento della media e della varianza nel tempo presenta
+            alcune caratteristiche interessanti. In una serie di esperimenti o
+            prove ripetute, la media tende a stabilizzarsi attorno a un valore
+            costante. Questo è particolarmente evidente quando il numero di
+            prove aumenta; man mano che aumentiamo il numero di prove, la media
+            campionaria si avvicina sempre di più alla media teorica attesa. Al
+            contrario, la varianza tende a diminuire con l'aumentare del numero
+            di prove. Inizialmente, quando si effettuano poche prove, le
+            osservazioni possono variare significativamente, portando a una
+            varianza maggiore. Tuttavia, man mano che si raccolgono più dati, la
+            varianza si riduce, indicando che le osservazioni si concentrano
+            sempre più attorno alla media. In questo contesto, è importante
+            notare che in prove indipendenti la media rimane stabile, mentre la
+            varianza tende a scendere. Ciò significa che, anche se la media non
+            cambia, l'incertezza associata ai risultati si riduce con l'aumento
+            delle prove.
           </p>
         </section>
       </main>
-    </div>
-    <div>
       <header>
-        <h1>Stabilità Numerica e Cancellazione Catastrofica</h1>
+        <h1>
+          Differenze tra Distribuzione del Numero Assoluto di Successi e
+          Frequenze Relative
+        </h1>
       </header>
       <main>
         <section>
-          <h2>Notioni di Problemi Computazionali</h2>
           <p>
-            Nell'ambito dell'analisi numerica, la stabilità numerica e la
-            cancellazione catastrofica sono due concetti fondamentali che
-            influenzano l'affidabilità dei calcoli computazionali. La stabilità
-            numerica si riferisce alla sensibilità di un algoritmo rispetto alle
-            perturbazioni nei dati di input. Un algoritmo stabile è in grado di
-            produrre risultati affidabili anche quando gli input presentano
-            errori di arrotondamento o altre imprecisioni. In contrapposizione,
-            un algoritmo instabile può amplificare gli errori, portando a
-            risultati completamente errati, specialmente quando si eseguono
-            operazioni su numeri molto grandi o molto piccoli.
-          </p>
-          <p>
-            La cancellazione catastrofica è un fenomeno che si verifica quando
-            si sottraggono due numeri simili, causando una significativa perdita
-            di precisione. Ad esempio, consideriamo il calcolo <i>a - b</i>,
-            dove <i>a</i> e <i>b</i> sono numeri molto vicini tra loro. A causa
-            della limitata precisione dei numeri rappresentati in un computer,
-            il risultato finale può essere dominato dall'errore di
-            arrotondamento, rendendo il risultato inaffidabile. Questo è
-            particolarmente problematico in situazioni in cui la precisione è
-            critica, come in applicazioni ingegneristiche o scientifiche.
-          </p>
-          <p>
-            Per mitigare questi problemi, è fondamentale adottare tecniche di
-            progettazione numerica che garantiscano stabilità e riducano al
-            minimo la cancellazione catastrofica. Strategie come l'uso di
-            algoritmi alternativi, la riscrittura delle espressioni matematiche
-            o l'impiego di numeri a precisione estesa possono migliorare la
-            stabilità numerica e fornire risultati più accurati. In sintesi,
-            comprendere e affrontare le problematiche di stabilità numerica e
-            cancellazione catastrofica è essenziale per sviluppare algoritmi
-            affidabili e robusti in qualsiasi applicazione computazionale.
+            Le differenze tra la distribuzione del numero assoluto di successi e
+            quella delle frequenze relative sono altrettanto significative. La
+            distribuzione del numero assoluto di successi rappresenta il numero
+            totale di successi ottenuti in un certo numero di prove. La sua
+            variabilità dipende dal numero totale di prove e dalla probabilità
+            di successo in ogni prova. Ad esempio, considerando un esperimento
+            con una probabilità di successo del 70%, il numero assoluto di
+            successi può variare notevolmente da un esperimento all'altro, a
+            meno che non ci siano un numero elevato di prove. D'altra parte, le
+            frequenze relative rappresentano la proporzione di successi rispetto
+            al numero totale di prove e tendono a stabilizzarsi più rapidamente
+            rispetto alla distribuzione del numero assoluto di successi. Questo
+            avviene perché, come accennato in precedenza, la media delle
+            frequenze relative si avvicina alla probabilità teorica di successo
+            con un numero crescente di prove. Un aspetto chiave di questa
+            distinzione è il comportamento asintotico: mentre la distribuzione
+            del numero assoluto di successi può mostrare una grande variabilità,
+            la distribuzione delle frequenze relative tende a convergere verso
+            il valore atteso, cioè la probabilità di successo. Questo fenomeno è
+            descritto dal Teorema del Limite Centrale, che afferma che la somma
+            (o media) di un gran numero di variabili casuali indipendenti tende
+            a seguire una distribuzione normale, indipendentemente dalla
+            distribuzione originale. delle prove.
           </p>
         </section>
       </main>
