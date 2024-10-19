@@ -1,4 +1,3 @@
-https://www.datatime.eu/public/cybersecurity/Statistics_2024_25/
 each lesson:
     -theory
     -practice
@@ -106,15 +105,19 @@ for()
 this time is +1 -1 se vince/perde la probabilita
 
 
+HMW3
+stochastic process
+sequence of distribution {x}_t
+for each t 
 
+Create contious time process
+reconsier the same schema to a certain time subdivide in N interval, N->infinite
 
+for each intercal i make a jump of 1 with prob const lamba / N
 
+la probabbilita di penetrare un server è in funzione di quanti server ci sono
 
-
-
-
-
-
+getrandomint()>p/current m
 
 
 
