@@ -115,7 +115,7 @@ GoButton.addEventListener("click", function () {
   n = parseInt(document.getElementById("atks").value);
 
   path = canvas.width / (m + 1);
-  heightpath = (canvas.height - 80) / m;
+  heightpath = ((canvas.height - 80) / m) * 2.5;
   if (oldm != m || oldn != n || oldp != p) {
     oldm = m;
     oldn = n;
