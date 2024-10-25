@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breach</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <a href="index.html">home</a>
+        <h1 id="welcomeMessage">Start the Breach, HM4</h1>
+        <button id="GoButton">Go</button>
+        <button id="clearCanvas">Clear</button>
+        <label for="input1">probability:</label>
+        <input
+          type="number"
+          id="prob"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.7"
+        />
+        <label for="input1">hacker:</label>
+        <input type="number" id="atks" value="20" />
+        <label for="input1">server:</label>
+        <input type="number" id="systmes" value="100" />
+        <p id="mediacolpiti"></p>
+        <p id="varianza"></p>
+        <p id="massimi"></p>
+      </div>
+      <div class="canvasdiv">
+        <canvas id="canvas" width="1000" height="550"></canvas>
+        <canvas id="canvas2" width="200" height="550"></canvas>
+        <div id="numbers"></div>
+      </div>
+    </div>
+
+    <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script4.js"
+          >qui</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <header>
+        <h1>Statistical Independence</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            L’indipendenza statistica tra due eventi A e B in teoria della
+            probabilità significa che il verificarsi dell’evento A non influenza
+            in alcun modo la probabilità del verificarsi dell’evento B e
+            viceversa. Formalmente, si dice che due eventi sono indipendenti se
+            la probabilità della loro intersezione è il prodotto delle
+            probabilità individuali: 𝑃 ( 𝐴 ∩ 𝐵 ) = 𝑃 ( 𝐴 ) ⋅ 𝑃 ( 𝐵 ). Questa
+            relazione implica che conoscere l’informazione sull’esito di uno dei
+            due eventi non fornisce alcuna informazione sull’altro evento. Un
+            esempio comune per illustrare l’indipendenza statistica è il lancio
+            di una moneta e il lancio di un dado. L’esito del lancio della
+            moneta (ad esempio, ottenere testa o croce) è indipendente
+            dall’esito del lancio del dado (ad esempio, ottenere un 4). In altre
+            parole, la probabilità di ottenere testa con la moneta non è
+            influenzata dal risultato del dado e viceversa, quindi i due eventi
+            sono indipendenti. In termini più generali, questa definizione si
+            estende anche a variabili casuali, dove due variabili casuali 𝑋 e 𝑌
+            sono indipendenti se la distribuzione congiunta 𝑃 ( 𝑋 , 𝑌 ) P(X,Y) è
+            il prodotto delle distribuzioni marginali, ovvero: 𝑃 ( 𝑋 = 𝑥 , 𝑌 = 𝑦
+            ) = 𝑃 ( 𝑋 = 𝑥 ) ⋅ 𝑃 ( 𝑌 = 𝑦 ) L’indipendenza statistica è
+            fondamentale in probabilità e statistica perché consente di
+            semplificare calcoli e modelli, rendendo possibile analizzare
+            sistemi complessi suddividendoli in componenti indipendenti.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="script4.js"></script>
+  </body>
+</html>
