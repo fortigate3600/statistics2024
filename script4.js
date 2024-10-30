@@ -17,9 +17,6 @@ var oldp = 20;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const canvas2 = document.getElementById("canvas2");
-const ctx2 = canvas2.getContext("2d");
-
 // Richiama la funzione con il valore di 'n' desiderato
 // Cambia il numero 10 con quello che desideri
 
@@ -94,7 +91,7 @@ function drawRandomLines() {
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
-  ctx2.clearRect(0, 0, canvas2.width, canvas2.height); // Cancella tutto il secondo canvas
+  //.clearRect(0, 0, canvas2.width, canvas2.height); // Cancella tutto il secondo canvas
   sumbreaches = 0;
   numcampioni = 0;
   textmediacolpiti.innerText = "";
@@ -109,13 +106,12 @@ const textmediacolpiti = document.getElementById("mediacolpiti");
 const textvarianza = document.getElementById("varianza");
 const textmassimi = document.getElementById("massimi");
 GoButton.addEventListener("click", function () {
-  ctx2.clearRect(0, 0, canvas.width, canvas.height); // Cancella tutto il canvas
   p = parseFloat(document.getElementById("prob").value);
   m = parseInt(document.getElementById("systmes").value);
   n = parseInt(document.getElementById("atks").value);
 
   path = canvas.width / (m + 1);
-  heightpath = ((canvas.height - 80) / m) * 2.5;
+  heightpath = ((canvas.height - 80) / m) * 3;
   if (oldm != m || oldn != n || oldp != p) {
     oldm = m;
     oldn = n;
@@ -157,18 +153,6 @@ GoButton.addEventListener("click", function () {
   maxValue = Math.max(...Object.values(diz));
   z = 200 / maxValue;
   for (h in diz) {
-    if (diz[h] == maxValue) {
-      massimi.push(parseInt(h));
-      ctx2.strokeStyle = "blue";
-    }
-
-    ctx2.lineWidth = 2;
-    ctx2.beginPath();
-    ctx2.moveTo(0, start - h);
-    ctx2.lineTo(z * diz[h], start - h);
-    ctx2.stroke();
-
-    ctx2.strokeStyle = "black";
   }
 
   var mediacolpiti = sumbreaches / (n * numcampioni);
