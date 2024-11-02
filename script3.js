@@ -178,3 +178,7 @@ GoButton.addEventListener("click", function () {
 const clearButton = document.getElementById("clearCanvas");
 // Aggiungi l'event listener al pulsante
 clearButton.addEventListener("click", clearCanvas);
+
+function home() {
+  window.location.href = "index.html";
+}
