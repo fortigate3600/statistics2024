@@ -8,12 +8,22 @@ body {
   margin: 0;
   flex-wrap: wrap; /* Va a capo se non c'è spazio sufficiente */
   gap: 10px;
+  margin-top: 10px;
 }
 
 .container {
   justify-content: center;
   text-align: flex-start;
   max-width: 100%;
+}
+
+.sopra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; /* Spazio tra gli elementi */
+  margin-top: 20px;
 }
 
 .containerimg {
