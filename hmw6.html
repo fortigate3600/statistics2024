@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generatore di Linee Verticali su un Canvas</title>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="home()">home</button>
+      <div class="sopra">
+        <h1 id="welcomeMessage">
+          Probability Distribution with Arbitrary Probability
+        </h1>
+        <div>
+          <!-- Input per il numero di campi -->
+          <label for="numFields">Inserisci il numero di campi:</label>
+          <input type="number" id="numFields" min="1" value="5" required />
+
+          <!-- Bottone per generare i campi -->
+          <button onclick="generateFields()">Genera Campi</button>
+
+          <!-- Contenitore per i campi dinamici -->
+          <div
+            id="fieldsContainer"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+            "
+          ></div>
+          <label for="input1">intervalli:</label>
+          <input type="number" id="systems" value="30" />
+          <!-- Bottone per inviare i valori -->
+          <button onclick="submitValues()">Invia Valori</button>
+          <p id="media"></p>
+          <p id="varianza"></p>
+          <p id="mediateorica"></p>
+          <p id="varianzateorica"></p>
+        </div>
+      </div>
+      <canvas
+        id="lineCanvas"
+        width="500"
+        height="300"
+        style="border: 1px solid #000; margin-top: 20px"
+      ></canvas>
+      <canvas
+        id="lineCanvas2"
+        width="500"
+        height="300"
+        style="border: 1px solid #000; margin-top: 20px"
+      ></canvas>
+    </div>
+    <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script6.js"
+          >qui</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <header>
+        <h1>Teorema Fondamentale del Calcolo</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            Il Teorema Fondamentale del Calcolo collega il concetto di derivata
+            e quello di integrale, fornendo una base teorica per il calcolo
+            integrale. Esso si compone di due parti principali: la prima parte
+            afferma che l'integrale definito di una funzione continua 𝑓 ( 𝑥 )
+            f(x) su un intervallo [ 𝑎 , 𝑏 ] [a,b] può essere valutato
+            utilizzando una primitiva 𝐹 ( 𝑥 ) F(x) di 𝑓 ( 𝑥 ) f(x), tale che ∫ 𝑎
+            𝑏 𝑓 ( 𝑥 )   𝑑 𝑥 = 𝐹 ( 𝑏 ) − 𝐹 ( 𝑎 ) ∫ a b ​ f(x)dx=F(b)−F(a). La
+            seconda parte stabilisce che, se 𝐹 ( 𝑥 ) F(x) è definita come
+            l'integrale della funzione 𝑓 ( 𝑥 ) f(x) a partire da un punto fisso
+            𝑎 a, allora la derivata di 𝐹 ( 𝑥 ) F(x) rispetto a 𝑥 x è uguale a 𝑓
+            ( 𝑥 ) f(x), ovvero 𝐹 ′ ( 𝑥 ) = 𝑓 ( 𝑥 ) F ′ (x)=f(x). Questo teorema
+            è fondamentale anche nella teoria della probabilità, dove si collega
+            alla funzione di densità di probabilità (PDF) e alla funzione di
+            distribuzione cumulativa (CDF).
+          </p>
+          <p>
+            In particolare, data una variabile casuale continua 𝑋 X con funzione
+            di densità di probabilità 𝑓 ( 𝑥 ) f(x), la funzione di distribuzione
+            cumulativa 𝐹 ( 𝑥 ) F(x) rappresenta la probabilità che 𝑋 X assuma un
+            valore minore o uguale a 𝑥 x, ovvero 𝐹 ( 𝑥 ) = 𝑃 ( 𝑋 ≤ 𝑥 ) = ∫ − ∞ 𝑥
+            𝑓 ( 𝑡 )   𝑑 𝑡 F(x)=P(X≤x)=∫ −∞ x ​ f(t)dt. In questo contesto, il
+            Teorema Fondamentale del Calcolo implica che la derivata della CDF 𝐹
+            ( 𝑥 ) F(x) rispetto a 𝑥 x è uguale alla PDF 𝑓 ( 𝑥 ) f(x), quindi 𝐹 ′
+            ( 𝑥 ) = 𝑓 ( 𝑥 ) F ′ (x)=f(x). Pertanto, il teorema fornisce una
+            relazione tra la CDF e la PDF di una variabile casuale continua,
+            dimostrando come la PDF rappresenti la "densità" locale di
+            probabilità e la CDF accumuli questa densità lungo l'intervallo dei
+            valori di 𝑋 X.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script6.js"></script>
+</html>
