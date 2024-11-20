@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generatore di Linee Verticali su un Canvas</title>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="home()">home</button>
+      <div class="sopra">
+        <h1 id="welcomeMessage">Generalization of the arbitrary probability</h1>
+        <div>
+          <!-- Input per il numero di campi -->
+          <label for="numFields">Inserisci il numero di campi:</label>
+          <input type="number" id="numFields" min="1" value="5" required />
+
+          <!-- Bottone per generare i campi -->
+          <button onclick="generateFields()">Genera Campi</button>
+
+          <!-- Contenitore per i campi dinamici -->
+          <div
+            id="fieldsContainer"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+            "
+          ></div>
+          <label for="input1">intervalli:</label>
+          <input type="number" id="systems" value="30" />
+          <label for="input1">iterazioni:</label>
+          <input type="number" id="iterations" value="25" />
+          <!-- Bottone per inviare i valori -->
+          <button onclick="submitValues()">Invia Valori</button>
+          <p id="media"></p>
+          <p id="varianza"></p>
+          <p id="mediateorica"></p>
+          <p id="varianzateorica"></p>
+        </div>
+      </div>
+      <canvas
+        id="lineCanvas2"
+        width="500"
+        height="300"
+        style="
+          border: 1px solid #000;
+          margin-top: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      ></canvas>
+    </div>
+    <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script7.js"
+          >qui</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <header>
+        <h1>Relazione tra le medie</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            a media delle medie campionarie calcolata risulta abbastanza vicina
+            alla media teorica della distribuzione genitore, con una discrepanza
+            che si traduce in una leggera sottostima. Questa differenza, pur non
+            essendo marcata, potrebbe essere attribuita a diversi fattori, come
+            la dimensione limitata dei campioni o l'eventuale presenza di un
+            bias sistematico durante il processo di estrazione. In un contesto
+            ideale, ci si aspetterebbe che la media delle medie campionarie
+            converga alla media teorica, seguendo il teorema del limite
+            centrale. Tuttavia, anche piccole deviazioni possono verificarsi in
+            pratica a causa di fluttuazioni statistiche e della struttura
+            specifica del campionamento adottato.
+          </p>
+          <p>
+            Per quanto riguarda la varianza, la media delle varianze campionarie
+            risulta significativamente maggiore rispetto alla varianza teorica
+            della distribuzione genitore. Questo risultato indica una
+            variabilità più elevata nei campioni rispetto a quella prevista, un
+            fenomeno che può essere spiegato dall’effetto delle dimensioni
+            ridotte dei campioni, che amplificano le fluttuazioni statistiche
+            intrinseche. Tale discrepanza potrebbe anche derivare da una
+            distribuzione genitore che presenta caratteristiche particolari,
+            come code lunghe o una maggiore dispersione rispetto a quanto
+            ipotizzato. Complessivamente, i risultati evidenziano una buona
+            coerenza per quanto riguarda la media, mentre la maggiore varianza
+            osservata richiede ulteriori approfondimenti per comprendere meglio
+            il ruolo del metodo di campionamento e identificare possibili
+            distorsioni o errori.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script7.js"></script>
+</html>
