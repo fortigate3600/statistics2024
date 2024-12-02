@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Law of Large Numbers</title>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="home()">home</button>
+      <div class="sopra">
+        <h1 id="welcomeMessage">
+          Law of Large Numbers, Sampling Mean and Variance
+        </h1>
+        <div>
+          <!-- Input per il numero di campi -->
+          <label for="numFields">Inserisci il numero di campi:</label>
+          <input type="number" id="numFields" min="1" value="5" required />
+
+          <!-- Bottone per generare i campi -->
+          <button onclick="generateFields()">Genera Campi</button>
+
+          <!-- Contenitore per i campi dinamici -->
+          <div
+            id="fieldsContainer"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+            "
+          ></div>
+          <label for="input1">intervalli:</label>
+          <input type="number" id="systems" value="30" />
+          <label for="input1">iterazioni:</label>
+          <input type="number" id="iterations" value="25" />
+          <!-- Bottone per inviare i valori -->
+          <button onclick="submitValues()">Invia Valori</button>
+          <p id="media"></p>
+          <p id="varianza"></p>
+          <br />
+          <p id="media2"></p>
+          <p id="varianza2"></p>
+          <br />
+          <p id="mediateorica"></p>
+          <p id="varianzateorica"></p>
+        </div>
+      </div>
+      <canvas
+        id="lineCanvas2"
+        width="500"
+        height="300"
+        style="
+          border: 1px solid #000;
+          margin-top: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      ></canvas>
+    </div>
+    <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script9.js"
+          >qui</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <header>
+        <h1>Media Campionaria e la Varianza Vampionaria</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            La media campionaria e la varianza campionaria sono due statistiche
+            fondamentali per descrivere un campione estratto da una popolazione.
+            La media campionaria, definita come la somma dei valori del campione
+            divisa per il numero di osservazioni, è uno stimatore non distorto
+            della media della popolazione. La varianza campionaria misura invece
+            la dispersione dei dati attorno alla media campionaria. Nella sua
+            forma corretta, che divide per 𝑛 − 1 (dove 𝑛 è la dimensione del
+            campione), è uno stimatore non distorto della varianza della
+            popolazione. Queste statistiche si basano su proprietà fondamentali:
+            la media campionaria ha una distribuzione normale per campioni
+            sufficientemente grandi (teorema del limite centrale), e la varianza
+            campionaria converge alla varianza della popolazione con campioni
+            sempre più ampi.
+          </p>
+        </section>
+      </main>
+      <header>
+        <h1>La Legge dei Grandi Numeri</h1>
+      </header>
+      <main>
+        <section>
+          <p>
+            La legge dei grandi numeri afferma che, aumentando il numero di
+            osservazioni in un campione, la media campionaria tende a convergere
+            verso la media della popolazione. Questo principio trova molteplici
+            applicazioni, anche in ambito cybersecurity. Ad esempio, nella
+            rilevazione di anomalie in un sistema, la media e la varianza di
+            metriche come il tempo di risposta di un server o il numero di
+            richieste possono essere monitorate: eventuali deviazioni
+            significative rispetto ai valori attesi possono indicare attività
+            sospette, come un attacco DDoS. Inoltre, la legge dei grandi numeri
+            è utilizzata nei modelli di crittografia probabilistica per
+            garantire che il comportamento di un algoritmo o protocollo
+            rispecchi il suo progetto teorico quando eseguito su un numero
+            elevato di iterazioni.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script9.js"></script>
+</html>
