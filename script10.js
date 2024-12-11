@@ -54,30 +54,26 @@ const partitions = 1000; // Numero di partizioni per Riemann
 
 // Funzioni da calcolare
 const functions = {
-  "Distribuzione Normale (std = 1)": (x) => normalDistribution(x),
-  "Quadratica (x^2)": quadratic,
+  "Normal distribution (std = 1)": (x) => normalDistribution(x),
+  "Quadratic (x^2)": quadratic,
   "Sin(x)": sine,
 };
 
 let output = "";
 // Calcolo e stampa dei risultati
 for (const [name, func] of Object.entries(functions)) {
-  const currentRange = name.includes("Normale") ? rangeNormal : range; // Usa l'intervallo appropriato
+  const currentRange = name.includes("Normal") ? rangeNormal : range; // Usa l'intervallo appropriato
   const lebesgueResult = lebesgueIntegral(func, currentRange, delta);
   const riemannResult = riemannIntegral(func, currentRange, partitions);
 
-  output += `\nFunzione: ${name}<br>`;
-  output += `Intervallo: [${currentRange[0]}, ${
+  output += `\nFunction: ${name}<br>`;
+  output += `Interval: [${currentRange[0]}, ${
     currentRange[1] == 3
       ? currentRange[1].toFixed(0)
       : currentRange[1].toFixed(2)
   }]<br>`;
-  output += `Risultato Integrale di Lebesgue: ${lebesgueResult.toFixed(
-    10
-  )}<br>`;
-  output += `Risultato Integrale di Riemann: ${riemannResult.toFixed(
-    10
-  )}<br><br>`;
+  output += `Result of Lebesgue Integral: ${lebesgueResult.toFixed(10)}<br>`;
+  output += `Result of Riemann Integral: ${riemannResult.toFixed(10)}<br><br>`;
 }
 text.innerHTML = output;
 
