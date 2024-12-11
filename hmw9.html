@@ -4,11 +4,13 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Law of Large Numbers</title>
+    <title>Homework 9</title>
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">
           Law of Large Numbers, Sampling Mean and Variance
@@ -74,46 +76,137 @@
 
     <div>
       <header>
-        <h1>Media Campionaria e la Varianza Vampionaria</h1>
+        <h1>Properties of the Sampling Mean and Variance</h1>
       </header>
       <main>
         <section>
           <p>
-            La media campionaria e la varianza campionaria sono due statistiche
-            fondamentali per descrivere un campione estratto da una popolazione.
-            La media campionaria, definita come la somma dei valori del campione
-            divisa per il numero di osservazioni, è uno stimatore non distorto
-            della media della popolazione. La varianza campionaria misura invece
-            la dispersione dei dati attorno alla media campionaria. Nella sua
-            forma corretta, che divide per 𝑛 − 1 (dove 𝑛 è la dimensione del
-            campione), è uno stimatore non distorto della varianza della
-            popolazione. Queste statistiche si basano su proprietà fondamentali:
-            la media campionaria ha una distribuzione normale per campioni
-            sufficientemente grandi (teorema del limite centrale), e la varianza
-            campionaria converge alla varianza della popolazione con campioni
-            sempre più ampi.
+            The sampling mean and variance are fundamental concepts in
+            statistics that help to describe the central tendency and the spread
+            of data within a sample, respectively. The sampling mean, often
+            referred to as the sample average, is calculated by summing all of
+            the sample values and dividing this sum by the number of
+            observations in the sample. A key property of the sampling mean is
+            that as the sample size increases, the sample mean becomes a more
+            accurate estimate of the population mean. This property is
+            particularly important in statistical inference, where the goal is
+            often to make conclusions about a larger population based on a
+            sample.
+          </p>
+          <p>
+            The variance, on the other hand, measures the variability or spread
+            of the sample data. It is calculated by averaging the squared
+            differences between each sample point and the sample mean. One
+            important property of the sampling variance is that, as the sample
+            size increases, the sample variance becomes a more reliable estimate
+            of the population variance, meaning it provides better insights into
+            the overall variability of the data.
           </p>
         </section>
       </main>
       <header>
-        <h1>La Legge dei Grandi Numeri</h1>
+        <h1>Law of Large Numbers</h1>
       </header>
       <main>
         <section>
           <p>
-            La legge dei grandi numeri afferma che, aumentando il numero di
-            osservazioni in un campione, la media campionaria tende a convergere
-            verso la media della popolazione. Questo principio trova molteplici
-            applicazioni, anche in ambito cybersecurity. Ad esempio, nella
-            rilevazione di anomalie in un sistema, la media e la varianza di
-            metriche come il tempo di risposta di un server o il numero di
-            richieste possono essere monitorate: eventuali deviazioni
-            significative rispetto ai valori attesi possono indicare attività
-            sospette, come un attacco DDoS. Inoltre, la legge dei grandi numeri
-            è utilizzata nei modelli di crittografia probabilistica per
-            garantire che il comportamento di un algoritmo o protocollo
-            rispecchi il suo progetto teorico quando eseguito su un numero
-            elevato di iterazioni.
+            The Law of Large Numbers (LLN) is a key theorem in probability
+            theory, which states that as the sample size increases, the sample
+            mean will converge to the population mean, making the sample mean a
+            more accurate representation of the true mean of the population.
+            There are two forms of this law: the weak law and the strong law. In
+            both forms, the principle holds that with an increasing number of
+            observations, the average of the sample values gets closer to the
+            expected value of the population. This convergence is especially
+            useful in various fields, including statistics, finance, and
+            engineering, as it assures that larger datasets lead to more precise
+            estimations.
+          </p>
+          <p>
+            In the field of cybersecurity, the Law of Large Numbers plays a
+            crucial role in areas such as anomaly detection, risk analysis, and
+            the evaluation of system performance. For instance, when monitoring
+            network traffic for potential security threats, the LLN can be
+            applied to establish a baseline for what constitutes "normal"
+            behavior. As more network data is collected over time, the sample
+            mean of network traffic metrics (such as packet sizes, frequencies,
+            and types of protocols used) becomes more representative of typical
+            behavior. As a result, any significant deviation from this baseline,
+            based on the increasingly accurate average, can be flagged as an
+            anomaly, potentially indicating a security breach or malicious
+            activity.
+          </p>
+          <p>
+            Moreover, the Law of Large Numbers also plays a role in enhancing
+            the reliability of cryptographic systems. In cryptography, random
+            number generators (RNGs) are essential for generating keys and
+            ensuring the unpredictability of cryptographic operations. The LLN
+            ensures that, over time, a RNG will produce a sequence of numbers
+            that is statistically representative of a truly random sequence,
+            reducing biases and improving the security of the cryptographic
+            processes. This application is particularly important in securing
+            communication channels and in the generation of strong encryption
+            keys, which are critical for maintaining confidentiality and
+            integrity in cybersecurity systems.
+          </p>
+          <p>
+            In conclusion, the sampling mean and variance, along with the Law of
+            Large Numbers, are powerful statistical concepts that not only
+            provide insight into how sample data behaves as it grows but also
+            have practical applications in the field of cybersecurity. From
+            enhancing anomaly detection to ensuring the integrity of
+            cryptographic systems, these concepts help to improve the
+            reliability and security of modern technologies.
+          </p>
+        </section>
+      </main>
+      <header>
+        <h1>Optional:</h1>
+      </header>
+      <main>
+        <section>
+          <h2>
+            Fundamental Ideas of the Main Encryption Methods and Their
+            Statistical Properties
+          </h2>
+          <p>
+            Encryption is a crucial technique in modern cryptography, designed
+            to protect information from unauthorized access by transforming it
+            into an unreadable format. There are several types of encryption
+            methods, each with its unique approach to securing data. The two
+            main categories of encryption are symmetric-key and asymmetric-key
+            encryption. In symmetric-key encryption, both the sender and the
+            receiver use the same secret key to encrypt and decrypt the message.
+            Popular examples include the Advanced Encryption Standard (AES) and
+            Data Encryption Standard (DES). The primary strength of symmetric
+            encryption lies in its efficiency, as it uses relatively small keys
+            for fast encryption. However, key distribution and management
+            present significant challenges, especially for large systems.
+          </p>
+          <p>
+            On the other hand, asymmetric-key encryption, also known as
+            public-key encryption, uses two separate keys: a public key for
+            encryption and a private key for decryption. RSA
+            (Rivest-Shamir-Adleman) is a widely used asymmetric encryption
+            algorithm. This method solves the key distribution problem, as the
+            public key can be freely shared, while the private key remains
+            confidential. Asymmetric encryption, however, is computationally
+            more expensive than symmetric encryption due to the complexity of
+            operations involved in key generation and encryption.
+          </p>
+          <p>
+            From a statistical perspective, the security of encryption methods
+            relies heavily on the unpredictability and randomness of key
+            generation and the difficulty of certain mathematical problems. For
+            instance, the security of RSA is based on the difficulty of
+            factoring large prime numbers, while AES depends on the
+            unpredictability of its key schedule and the diffusion and confusion
+            properties of its block cipher. Statistical properties like entropy,
+            randomness, and the distribution of ciphertexts are essential in
+            assessing the strength of an encryption algorithm. A good encryption
+            method ensures that the ciphertext is indistinguishable from random
+            data, making it computationally infeasible for attackers to retrieve
+            the original message without the correct key.
           </p>
         </section>
       </main>

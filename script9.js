@@ -155,3 +155,9 @@ function drawLines(values) {
 function home() {
   window.location.href = "index.html";
 }
+function right() {
+  window.location.href = "hmw10.html";
+}
+function left() {
+  window.location.href = "hmw8.html";
+}

@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breach</title>
+    <title>Homework 2</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">
           Refinied Euler–Maruyama simulator with Jumps (-1, +1)
@@ -66,62 +68,86 @@
 
     <div>
       <header>
-        <h1>Comportamento della Media e della Varianza nel Tempo</h1>
+        <h1>Behavior of the Mean and Variance Over Time</h1>
       </header>
       <main>
         <section>
           <p>
-            Il comportamento della media e della varianza nel tempo presenta
-            alcune caratteristiche interessanti. In una serie di esperimenti o
-            prove ripetute, la media tende a stabilizzarsi attorno a un valore
-            costante. Questo è particolarmente evidente quando il numero di
-            prove aumenta; man mano che aumentiamo il numero di prove, la media
-            campionaria si avvicina sempre di più alla media teorica attesa. Al
-            contrario, la varianza tende a diminuire con l'aumentare del numero
-            di prove. Inizialmente, quando si effettuano poche prove, le
-            osservazioni possono variare significativamente, portando a una
-            varianza maggiore. Tuttavia, man mano che si raccolgono più dati, la
-            varianza si riduce, indicando che le osservazioni si concentrano
-            sempre più attorno alla media. In questo contesto, è importante
-            notare che in prove indipendenti la media rimane stabile, mentre la
-            varianza tende a scendere. Ciò significa che, anche se la media non
-            cambia, l'incertezza associata ai risultati si riduce con l'aumento
-            delle prove.
+            The behavior of the mean and variance over time exhibits several
+            interesting characteristics. In a series of repeated experiments or
+            trials, the mean tends to stabilize around a constant value. This
+            becomes particularly evident as the number of trials increases. As
+            we increase the number of trials, the sample mean approaches the
+            expected theoretical mean. On the other hand, the variance tends to
+            decrease as the number of trials grows. Initially, when only a few
+            trials are performed, the observations may vary significantly,
+            leading to a higher variance. However, as more data is collected,
+            the variance reduces, indicating that the observations are becoming
+            increasingly concentrated around the mean.
+          </p>
+          <p>
+            In this context, it is important to note that, in independent
+            trials, the mean remains stable while the variance tends to
+            decrease. This implies that although the mean does not change, the
+            uncertainty associated with the results decreases as the number of
+            trials increases. As a result, the precision of the estimates
+            improves with more data, which is a fundamental principle in
+            statistics.
+          </p>
+          <p>
+            The reduction in variance over time is a key aspect of the law of
+            large numbers. This law asserts that as the number of trials grows,
+            the sample mean converges to the true population mean, and the
+            variability around this mean decreases. Essentially, the more trials
+            conducted, the more accurate and reliable the estimation of the
+            population mean becomes.
           </p>
         </section>
       </main>
       <header>
         <h1>
-          Differenze tra Distribuzione del Numero Assoluto di Successi e
-          Frequenze Relative
+          Differences Between the Absolute Number of Successes and Relative
+          Frequencies Distributions
         </h1>
       </header>
       <main>
         <section>
           <p>
-            Le differenze tra la distribuzione del numero assoluto di successi e
-            quella delle frequenze relative sono altrettanto significative. La
-            distribuzione del numero assoluto di successi rappresenta il numero
-            totale di successi ottenuti in un certo numero di prove. La sua
-            variabilità dipende dal numero totale di prove e dalla probabilità
-            di successo in ogni prova. Ad esempio, considerando un esperimento
-            con una probabilità di successo del 70%, il numero assoluto di
-            successi può variare notevolmente da un esperimento all'altro, a
-            meno che non ci siano un numero elevato di prove. D'altra parte, le
-            frequenze relative rappresentano la proporzione di successi rispetto
-            al numero totale di prove e tendono a stabilizzarsi più rapidamente
-            rispetto alla distribuzione del numero assoluto di successi. Questo
-            avviene perché, come accennato in precedenza, la media delle
-            frequenze relative si avvicina alla probabilità teorica di successo
-            con un numero crescente di prove. Un aspetto chiave di questa
-            distinzione è il comportamento asintotico: mentre la distribuzione
-            del numero assoluto di successi può mostrare una grande variabilità,
-            la distribuzione delle frequenze relative tende a convergere verso
-            il valore atteso, cioè la probabilità di successo. Questo fenomeno è
-            descritto dal Teorema del Limite Centrale, che afferma che la somma
-            (o media) di un gran numero di variabili casuali indipendenti tende
-            a seguire una distribuzione normale, indipendentemente dalla
-            distribuzione originale. delle prove.
+            The differences between the distribution of the absolute number of
+            successes and that of relative frequencies are also significant. The
+            distribution of the absolute number of successes represents the
+            total number of successes obtained over a certain number of trials.
+            Its variability depends on the total number of trials and the
+            probability of success in each trial. For instance, consider an
+            experiment with a success probability of 70%. The absolute number of
+            successes can vary greatly from one experiment to another unless a
+            large number of trials is conducted.
+          </p>
+          <p>
+            In contrast, relative frequencies represent the proportion of
+            successes relative to the total number of trials, and they tend to
+            stabilize more quickly compared to the distribution of the absolute
+            number of successes. This occurs because, as mentioned earlier, the
+            mean of the relative frequencies approaches the theoretical
+            probability of success with an increasing number of trials.
+          </p>
+          <p>
+            A key aspect of this distinction is the asymptotic behavior: while
+            the distribution of the absolute number of successes can exhibit
+            considerable variability, the distribution of relative frequencies
+            tends to converge toward the expected value, which is the
+            probability of success. This phenomenon is described by the Central
+            Limit Theorem, which states that the sum (or mean) of a large number
+            of independent random variables tends to follow a normal
+            distribution, regardless of the original distribution of the trials.
+          </p>
+          <p>
+            The Central Limit Theorem is a fundamental result in statistics,
+            providing a foundation for making inferences about populations based
+            on sample data. It explains why, with a sufficient number of trials,
+            the distribution of relative frequencies will approach the true
+            probability of success, making statistical predictions more reliable
+            as the sample size increases.
           </p>
         </section>
       </main>

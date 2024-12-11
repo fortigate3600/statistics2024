@@ -4,11 +4,13 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generatore di Linee Verticali su un Canvas</title>
+    <title>Homework 6</title>
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">
           Probability Distribution with Arbitrary Probability
@@ -73,34 +75,49 @@
       <main>
         <section>
           <p>
-            Il Teorema Fondamentale del Calcolo collega il concetto di derivata
-            e quello di integrale, fornendo una base teorica per il calcolo
-            integrale. Esso si compone di due parti principali: la prima parte
-            afferma che l'integrale definito di una funzione continua 𝑓 ( 𝑥 )
-            f(x) su un intervallo [ 𝑎 , 𝑏 ] [a,b] può essere valutato
-            utilizzando una primitiva 𝐹 ( 𝑥 ) F(x) di 𝑓 ( 𝑥 ) f(x), tale che ∫ 𝑎
-            𝑏 𝑓 ( 𝑥 )   𝑑 𝑥 = 𝐹 ( 𝑏 ) − 𝐹 ( 𝑎 ) ∫ a b ​ f(x)dx=F(b)−F(a). La
-            seconda parte stabilisce che, se 𝐹 ( 𝑥 ) F(x) è definita come
-            l'integrale della funzione 𝑓 ( 𝑥 ) f(x) a partire da un punto fisso
-            𝑎 a, allora la derivata di 𝐹 ( 𝑥 ) F(x) rispetto a 𝑥 x è uguale a 𝑓
-            ( 𝑥 ) f(x), ovvero 𝐹 ′ ( 𝑥 ) = 𝑓 ( 𝑥 ) F ′ (x)=f(x). Questo teorema
-            è fondamentale anche nella teoria della probabilità, dove si collega
-            alla funzione di densità di probabilità (PDF) e alla funzione di
-            distribuzione cumulativa (CDF).
+            The Fundamental Theorem of Calculus is a cornerstone of mathematical
+            analysis, establishing a profound connection between the concepts of
+            differentiation and integration. It provides the theoretical
+            foundation for integral calculus and plays a critical role in a wide
+            variety of mathematical and applied fields. The theorem consists of
+            two key parts. The first part asserts that the definite integral of
+            a continuous function 𝑓(𝑥) over a closed interval [𝑎, 𝑏] can be
+            computed using an antiderivative 𝐹(𝑥) of the function 𝑓(𝑥).
+            Specifically, it states that:
+            <code>∫ₐᵇ 𝑓(𝑥) dx = 𝐹(𝑏) − 𝐹(𝑎)</code>. This means that the integral
+            of 𝑓(𝑥) can be evaluated by finding the difference between the
+            values of its antiderivative 𝐹(𝑥) at the boundaries of the interval.
+            The second part of the theorem establishes that if 𝐹(𝑥) is defined
+            as the integral of 𝑓(𝑥) from a fixed point 𝑎, then the derivative of
+            𝐹(𝑥) with respect to 𝑥 is equal to the function 𝑓(𝑥), i.e.,
+            <code>𝐹′(𝑥) = 𝑓(𝑥)</code>. This shows the reverse relationship
+            between differentiation and integration, providing a solid link
+            between the two concepts.
           </p>
+
           <p>
-            In particolare, data una variabile casuale continua 𝑋 X con funzione
-            di densità di probabilità 𝑓 ( 𝑥 ) f(x), la funzione di distribuzione
-            cumulativa 𝐹 ( 𝑥 ) F(x) rappresenta la probabilità che 𝑋 X assuma un
-            valore minore o uguale a 𝑥 x, ovvero 𝐹 ( 𝑥 ) = 𝑃 ( 𝑋 ≤ 𝑥 ) = ∫ − ∞ 𝑥
-            𝑓 ( 𝑡 )   𝑑 𝑡 F(x)=P(X≤x)=∫ −∞ x ​ f(t)dt. In questo contesto, il
-            Teorema Fondamentale del Calcolo implica che la derivata della CDF 𝐹
-            ( 𝑥 ) F(x) rispetto a 𝑥 x è uguale alla PDF 𝑓 ( 𝑥 ) f(x), quindi 𝐹 ′
-            ( 𝑥 ) = 𝑓 ( 𝑥 ) F ′ (x)=f(x). Pertanto, il teorema fornisce una
-            relazione tra la CDF e la PDF di una variabile casuale continua,
-            dimostrando come la PDF rappresenti la "densità" locale di
-            probabilità e la CDF accumuli questa densità lungo l'intervallo dei
-            valori di 𝑋 X.
+            The Fundamental Theorem of Calculus is not only foundational to pure
+            mathematics but also has significant applications in various
+            scientific disciplines, including probability theory. In the context
+            of probability, it helps define the relationship between the
+            probability density function (PDF) and the cumulative distribution
+            function (CDF). Specifically, if we have a continuous random
+            variable 𝑋 with a probability density function 𝑓(𝑥), the cumulative
+            distribution function 𝐹(𝑥) gives the probability that the random
+            variable 𝑋 takes a value less than or equal to a specific value 𝑥.
+            This is expressed mathematically as:
+            <code>𝐹(𝑥) = 𝑃(𝑋 ≤ 𝑥) = ∫₋∞ˣ 𝑓(𝑡) dt</code>. In this framework, the
+            Fundamental Theorem of Calculus implies that the derivative of the
+            CDF 𝐹(𝑥) with respect to 𝑥 is equal to the PDF 𝑓(𝑥). That is,
+            <code>𝐹′(𝑥) = 𝑓(𝑥)</code>. This relationship shows how the PDF
+            represents the local "density" of probability at each point, while
+            the CDF accumulates this density along the entire range of values
+            that 𝑋 can take. Essentially, the CDF gives the cumulative
+            probability up to a certain point, while the PDF describes how this
+            probability is distributed across different values of 𝑋. The
+            Fundamental Theorem, in this case, helps bridge the connection
+            between the two functions and provides a deeper understanding of the
+            underlying distribution of the random variable.
           </p>
         </section>
       </main>

@@ -140,3 +140,9 @@ function drawLines(values, flagcanvas) {
 function home() {
   window.location.href = "index.html";
 }
+function right() {
+  window.location.href = "hmw7.html";
+}
+function left() {
+  window.location.href = "hmw5.html";
+}

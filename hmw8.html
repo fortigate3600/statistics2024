@@ -4,11 +4,13 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generatore di Linee Verticali su un Canvas</title>
+    <title>Homework 8</title>
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">
           Shannon Entropy, Frequency Analysis and Caesar Cipher
@@ -87,41 +89,129 @@ Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura, ché la di
       <main>
         <section>
           <p>
-            La Shannon Entropy è una misura fondamentale in teoria
-            dell'informazione, utilizzata per quantificare l'incertezza o la
-            diversità di una distribuzione di probabilità. Data una
-            distribuzione discreta con probabilità p1, p2, … , p𝑛, l'entropia di
-            Shannon è definita come: 𝐻 = − ∑ (p𝑖 * log_2 (p𝑖) ), dove p𝑖
-            rappresenta la probabilità di ciascun evento. L'entropia è massima
-            quando la distribuzione è uniforme, ossia quando tutti gli eventi
-            hanno la stessa probabilità di verificarsi, riflettendo la massima
-            incertezza. Oltre all'entropia di Shannon, esistono altre misure di
-            diversità delle distribuzioni, come l'indice di Gini, che misura
-            l'ineguaglianza in una distribuzione, o l'entropia di Rényi, che
-            generalizza quella di Shannon introducendo un parametro per pesare
-            diversamente le probabilità. Queste misure trovano applicazioni in
-            vari campi, dalla statistica alla biologia, dalla teoria dei segnali
-            all'analisi di sistemi complessi.
+            Shannon entropy is one of the foundational concepts in information
+            theory, developed by Claude Shannon in his groundbreaking 1948
+            paper. It quantifies the uncertainty or randomness of a random
+            variable's distribution, giving insight into how much information is
+            produced by a system or process. Mathematically, the Shannon entropy
+            <em>H(X)</em> of a random variable <em>X</em> with a probability
+            distribution <em>P(X)</em> is expressed as:
+          </p>
+          <pre>
+        H(X) = -∑<sub>i</sub> P(x<sub>i</sub>) log<sub>2</sub> P(x<sub>i</sub>)
+    </pre
+          >
+          <p>
+            where <em>P(x<sub>i</sub>)</em> represents the probability of the
+            outcome <em>x<sub>i</sub></em
+            >, and the summation is taken over all possible outcomes. Shannon
+            entropy reaches its maximum value when all outcomes of the random
+            variable are equally probable, representing the highest possible
+            uncertainty. For instance, in the case of a fair coin toss, the
+            entropy is 1 bit because the two outcomes (heads or tails) are
+            equally likely. Conversely, when a distribution is
+            deterministic—meaning there is no uncertainty, as one outcome occurs
+            with probability 1 and the others with probability 0—the entropy is
+            0.
+          </p>
+
+          <p>
+            Beyond Shannon entropy, several other measures are used to assess
+            the diversity or uncertainty of distributions. For example, the Gini
+            index is frequently used in economics and decision tree algorithms
+            to measure inequality or diversity. It quantifies the probability of
+            two randomly selected elements from a distribution being different,
+            with a value of 0 representing perfect equality and 1 representing
+            maximal inequality. Another important measure is variance, which
+            captures the spread of a distribution around its mean. Variance is
+            the expected value of the squared deviations from the mean and
+            provides a measure of the variability or consistency in the data.
+            The standard deviation, which is simply the square root of the
+            variance, is often used to provide an intuitive measure of
+            dispersion. These alternative diversity measures complement Shannon
+            entropy, each providing a unique perspective on the distribution's
+            structure and the spread of its values.
+          </p>
+
+          <p>
+            These measures, including entropy, variance, and the Gini index, are
+            not just theoretical concepts but are widely applied in practical
+            scenarios such as data analysis, machine learning, economics, and
+            cryptography. For instance, in cryptography, entropy is used to
+            evaluate the randomness of keys, which is crucial for ensuring the
+            security of encrypted data. Similarly, the Gini index is often
+            employed to measure income inequality or to optimize decision trees
+            in machine learning, while variance and standard deviation are used
+            to assess the risk in financial portfolios.
           </p>
         </section>
       </main>
       <header>
-        <h1>Radice primitiva modulo p</h1>
+        <h1>Primitive Root</h1>
       </header>
       <main>
         <section>
           <p>
-            La nozione di radice primitiva modulo p è un concetto chiave
-            nell'aritmetica modulare e nella teoria dei numeri. Data un numero
-            primo p, una radice primitiva g modulo p è un intero tale che ogni
-            numero a coprimo con p può essere scritto nella forma g^k mod p per
-            un opportuno intero k. In altre parole, g genera l'intero gruppo
-            moltiplicativo modulo p. Formalmente, g è una radice primitiva
-            modulo p se gli interi 𝑔^1, 𝑔^2, … , 𝑔^(𝑝−1) mod p generano tutti i
-            numeri da 1 a p-1 senza ripetizioni. Le radici primitive sono
-            importanti per la costruzione di sistemi crittografici, come il
-            Diffie-Hellman, e nella generazione di sequenze pseudo-casuali,
-            grazie alla loro capacità di garantire cicli massimi.
+            In number theory, a primitive root modulo <em>p</em>, where
+            <em>p</em> is a prime number, is a number <em>g</em> that has the
+            unique property of generating all the integers that are coprime to
+            <em>p</em> when raised to successive powers and reduced modulo
+            <em>p</em>. More formally, for every integer <em>a</em> that is
+            coprime to <em>p</em> (i.e., <em>gcd(a, p) = 1</em>), there exists
+            an integer <em>k</em> such that:
+          </p>
+          <pre>
+        g<sup>k</sup> mod p = a
+    </pre
+          >
+          <p>
+            This means that <em>g</em> is a generator of the multiplicative
+            group of integers modulo <em>p</em>, and the powers of
+            <em>g</em> modulo <em>p</em> produce a complete set of non-zero
+            residues modulo <em>p</em>. A primitive root is thus an integer
+            that, when repeatedly exponentiated, cycles through every possible
+            value of <em>a</em> that is coprime to <em>p</em>, before repeating
+            the cycle.
+          </p>
+
+          <p>
+            For example, consider <em>p = 7</em>. The possible values that are
+            coprime to 7 are 1, 2, 3, 4, 5, and 6. A primitive root modulo 7 is
+            a number <em>g</em> such that its powers, reduced modulo 7, give all
+            of these values. In this case, 3 is a primitive root modulo 7,
+            since:
+          </p>
+          <pre>
+        3<sup>1</sup> mod 7 = 3, 3<sup>2</sup> mod 7 = 2, 3<sup>3</sup> mod 7 = 6, 
+        3<sup>4</sup> mod 7 = 4, 3<sup>5</sup> mod 7 = 5, 3<sup>6</sup> mod 7 = 1
+    </pre
+          >
+          <p>
+            Thus, 3 generates all integers coprime to 7, and hence it is a
+            primitive root modulo 7.
+          </p>
+
+          <p>
+            The concept of a primitive root plays a crucial role in many areas
+            of mathematics and cryptography, particularly in the study of cyclic
+            groups and finite fields. In cryptography, primitive roots are used
+            in algorithms such as the Diffie-Hellman key exchange, where the
+            security of the system relies on the difficulty of solving discrete
+            logarithms. The ability to efficiently compute powers of a primitive
+            root is also fundamental to the operation of elliptic curve
+            cryptography, which is used in secure communications and digital
+            signatures.
+          </p>
+
+          <p>
+            In addition to cryptographic applications, the study of primitive
+            roots is essential in fields such as number theory, where it helps
+            to understand the structure of the multiplicative groups of integers
+            modulo <em>p</em>. The existence of primitive roots is guaranteed
+            for prime numbers, but for composite numbers, the situation becomes
+            more complicated. The ability to find primitive roots is a key tool
+            for solving problems related to modular arithmetic, factorization,
+            and the generation of pseudorandom numbers.
           </p>
         </section>
       </main>

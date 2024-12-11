@@ -84,3 +84,6 @@ text.innerHTML = output;
 function home() {
   window.location.href = "index.html";
 }
+function left() {
+  window.location.href = "hmw9.html";
+}

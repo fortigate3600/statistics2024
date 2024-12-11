@@ -160,3 +160,9 @@ function calcolaModa(arr) {
 function home() {
   window.location.href = "index.html";
 }
+function right() {
+  window.location.href = "hmw9.html";
+}
+function left() {
+  window.location.href = "hmw7.html";
+}

@@ -175,3 +175,9 @@ clearButton.addEventListener("click", clearCanvas);
 function home() {
   window.location.href = "index.html";
 }
+function right() {
+  window.location.href = "hmw5.html";
+}
+function left() {
+  window.location.href = "hmw3.html";
+}

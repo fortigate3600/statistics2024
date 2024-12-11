@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breach</title>
+    <title>Homework 3</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">
           <p>
@@ -58,33 +60,144 @@
 
     <div>
       <header>
-        <h1>Central Tendency</h1>
+        <h1>
+          The Median as the Optimal Location Statistic: Exploring Centrality
+          Measures and Their Generalizations
+        </h1>
       </header>
       <main>
         <section>
+          <h2>Median as the Minimum of the Sum of Absolute Deviations</h2>
           <p>
-            Una statistica di posizione o tendenza centrale è un valore che
-            sintetizza il centro di una distribuzione di dati. Le definizioni
-            più comuni includono la media aritmetica, che bilancia tutte le
-            osservazioni, la mediana, che divide l’insieme in due metà uguali, e
-            la moda, il valore più frequente. Esistono altre forme come la media
-            geometrica, utile per dati con crescita moltiplicativa, la media
-            armonica, adatta a dati con relazioni inverse, e la media quadratica
-            (RMS), sensibile ai valori estremi. Queste misure possono essere
-            ulteriormente generalizzate. Ad esempio, la media con funzioni di
-            distanza minimizza diverse tipologie di distanze, creando nuovi
-            centri. Le statistiche robuste danno meno peso agli outlier, come la
-            media troncata. Una generalizzazione comune è la media p-norma, che
-            include la media aritmetica, quadratica e armonica come casi
-            particolari. Altre generalizzazioni riguardano misure di entropia o
-            centri basati su funzioni di utilità. In geometrie non euclidee,
-            come nelle superfici curve, la media geodetica minimizza le distanze
-            lungo la superficie. Infine, in contesti funzionali o di
-            distribuzioni, il concetto di centro si può estendere usando la
-            media di Fréchet. In generale, esistono infinite possibilità per
-            definire una statistica di posizione, a seconda di come si scelgono
-            le funzioni di distanza, i pesi o gli spazi in cui i dati si
-            trovano.
+            To illustrate why the median minimizes the sum of absolute
+            deviations, let’s consider a set of data points
+            <em>x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub></em> where
+            <em>x<sub>1</sub> ≤ x<sub>2</sub> ≤ ... ≤ x<sub>n</sub></em
+            >. The goal is to find a value <em>c</em> that minimizes the sum of
+            absolute deviations:
+          </p>
+
+          <pre>
+                      S(c) = ∑<sub>i=1</sub><sup>n</sup> |x<sub>i</sub> - c|
+    </pre>
+
+          <p>
+            The sum of absolute deviations measures how far each data point
+            <em>x<sub>i</sub></em> is from a central value <em>c</em>. To find
+            the value of <em>c</em> that minimizes this sum, we need to consider
+            how <em>S(c)</em> behaves as <em>c</em> changes.
+          </p>
+
+          <ul>
+            <li>
+              When <em>c</em> is less than <em>x<sub>1</sub></em
+              >, all terms in the sum <em>|x<sub>i</sub> - c|</em> are
+              decreasing as <em>c</em> increases, but the decrease in the sum
+              slows down as we approach the median.
+            </li>
+            <li>
+              When <em>c</em> is greater than <em>x<sub>n</sub></em
+              >, all terms in the sum <em>|x<sub>i</sub> - c|</em> are
+              increasing as <em>c</em> increases, but the increase in the sum
+              slows down as we move further from the median.
+            </li>
+            <li>
+              At the value of <em>c</em> that is the median, the sum of
+              deviations is minimized because this point balances the number of
+              terms on either side, leading to the smallest possible sum of
+              absolute distances.
+            </li>
+          </ul>
+
+          <p>
+            Mathematically, the median <em>c</em> is the value that satisfies
+            the condition where the number of points less than or equal to
+            <em>c</em> is at least as large as the number of points greater than
+            or equal to <em>c</em>. This minimizes the total distance, hence
+            making the median the optimal location statistic in terms of
+            minimizing absolute deviations.
+          </p>
+        </section>
+        <section>
+          <h2>Different Conceptual Definitions of a "Location" Statistic</h2>
+          <p>
+            A "location" statistic (also called a "center" or "central
+            tendency") is a measure that characterizes the center of a
+            distribution. There are several ways to define such a statistic,
+            each capturing different aspects of the data's central position. The
+            generalization of these ideas can lead to a vast number of different
+            definitions. Here are a few conceptual definitions:
+            <ul>
+              <li>
+                Mean (Arithmetic Average): The arithmetic mean is the sum of all
+                values divided by the number of values. It represents the
+                "balance point" of the distribution, where the sum of the
+                deviations from the mean is zero. The mean is sensitive to
+                extreme values (outliers) and works well for symmetric, normally
+                distributed data.
+              </li>
+              <li>
+                Median (Middle Value): The median is the middle value when the
+                data is ordered. It represents the point that divides the data
+                into two equal parts. The median is robust to outliers because
+                it is only dependent on the order of the data, not the values
+                themselves.
+              </li>
+              <li>
+                Mode (Most Frequent Value): The mode is the value that occurs
+                most frequently in the dataset. It is useful in describing
+                distributions with distinct peaks or multiple clusters. For
+                multimodal distributions, there can be multiple modes.
+              </li>
+              <li>
+                Trimean: The trimean is a weighted average of the median and the
+                midrange (the average of the minimum and maximum values). It
+                combines aspects of both the center and the spread of the data,
+                providing a more robust location measure.
+              </li>
+              <li>
+                Geometric Mean: The geometric mean is the nth root of the
+                product of all values. It is often used for data with
+                exponential growth or when values are multiplied together (e.g.,
+                in financial or population growth data). It emphasizes the
+                central tendency in multiplicative processes.
+              </li>
+              <li>
+                Harmonic Mean: The harmonic mean is the reciprocal of the
+                arithmetic mean of the reciprocals of the data points. It is
+                useful when the data represents rates or ratios and can give a
+                better measure of centrality in certain situations (e.g.,
+                average speed).
+              </li>
+              <li>
+                Weighted Mean: The weighted mean is a mean where each data point
+                is given a weight, indicating its importance. It generalizes the
+                arithmetic mean by allowing different data points to contribute
+                differently to the central value.
+              </li>
+              <li>
+                Quantiles and Percentiles: Quantiles divide the data into equal
+                parts, and percentiles specify the value below which a given
+                percentage of observations fall. These statistics generalize the
+                concept of the median, providing more nuanced measures of
+                centrality and spread.
+              </li>
+              <li>
+                M-estimators: These are a general class of location estimators
+                that minimize a function of the deviations of the data points.
+                The choice of the function (e.g., absolute deviations, squared
+                deviations, or others) leads to different types of location
+                statistics, such as the median (absolute deviation) or the mean
+                (squared deviation).
+              </li>
+              <li>
+                Robust Location Measures: These are defined to minimize the
+                effect of outliers. Examples include the median, the trimmed
+                mean (where a certain percentage of extreme values are removed),
+                and the Hampel identifier. These are often used when the data
+                contains outliers that could distort other location statistics.
+              </li>
+            </ul>
           </p>
         </section>
       </main>

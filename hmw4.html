@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breach</title>
+    <title>Homework 4</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <button onclick="left()"><</button>
       <button onclick="home()">home</button>
+      <button onclick="right()">></button>
       <div class="sopra">
         <h1 id="welcomeMessage">SDE simulating the Wiener process</h1>
         <div>
@@ -61,29 +63,45 @@
       </header>
       <main>
         <section>
+          <h2>
+            Statistical Independence and Its Analogies in Probability Theory
+          </h2>
+
           <p>
-            L’indipendenza statistica tra due eventi A e B in teoria della
-            probabilità significa che il verificarsi dell’evento A non influenza
-            in alcun modo la probabilità del verificarsi dell’evento B e
-            viceversa. Formalmente, si dice che due eventi sono indipendenti se
-            la probabilità della loro intersezione è il prodotto delle
-            probabilità individuali: 𝑃 ( 𝐴 ∩ 𝐵 ) = 𝑃 ( 𝐴 ) ⋅ 𝑃 ( 𝐵 ). Questa
-            relazione implica che conoscere l’informazione sull’esito di uno dei
-            due eventi non fornisce alcuna informazione sull’altro evento. Un
-            esempio comune per illustrare l’indipendenza statistica è il lancio
-            di una moneta e il lancio di un dado. L’esito del lancio della
-            moneta (ad esempio, ottenere testa o croce) è indipendente
-            dall’esito del lancio del dado (ad esempio, ottenere un 4). In altre
-            parole, la probabilità di ottenere testa con la moneta non è
-            influenzata dal risultato del dado e viceversa, quindi i due eventi
-            sono indipendenti. In termini più generali, questa definizione si
-            estende anche a variabili casuali, dove due variabili casuali 𝑋 e 𝑌
-            sono indipendenti se la distribuzione congiunta 𝑃 ( 𝑋 , 𝑌 ) P(X,Y) è
-            il prodotto delle distribuzioni marginali, ovvero: 𝑃 ( 𝑋 = 𝑥 , 𝑌 = 𝑦
-            ) = 𝑃 ( 𝑋 = 𝑥 ) ⋅ 𝑃 ( 𝑌 = 𝑦 ) L’indipendenza statistica è
-            fondamentale in probabilità e statistica perché consente di
-            semplificare calcoli e modelli, rendendo possibile analizzare
-            sistemi complessi suddividendoli in componenti indipendenti.
+            Statistical independence refers to the situation where the
+            occurrence of one event does not affect the probability of another
+            event. In probability theory, two events A and B are considered
+            independent if the probability of their intersection equals the
+            product of their individual probabilities. Mathematically, this is
+            expressed as:
+          </p>
+
+          <p>𝑃 ( 𝐴 ∩ 𝐵 ) = 𝑃 ( 𝐴 ) ⋅ 𝑃 ( 𝐵 )</p>
+
+          <p>
+            This formal definition highlights that the occurrence of event A
+            provides no information about the occurrence of event B, and vice
+            versa. A classic analogy is tossing a fair coin and rolling a fair
+            die. The outcome of the coin toss, whether heads or tails, does not
+            influence the result of the die roll, such as rolling a 4.
+            Therefore, the events are independent because knowing the result of
+            one does not change the likelihood of the other event happening.
+          </p>
+
+          <p>
+            In a more general sense, the concept of statistical independence
+            extends beyond individual events to random variables. Two random
+            variables 𝑋 and 𝑌 are independent if their joint distribution is the
+            product of their marginal distributions:
+          </p>
+          <p>𝑃 ( 𝑋 = 𝑥 , 𝑌 = 𝑦 ) = 𝑃 ( 𝑋 = 𝑥 ) ⋅ 𝑃 ( 𝑌 = 𝑦 )</p>
+          <p>
+            This condition is analogous to the definition for events, where the
+            probability of both variables taking specific values is the product
+            of their individual probabilities. The concept is fundamental in
+            simplifying complex systems and calculations in probability and
+            statistics, as it allows one to model systems as independent
+            components, making analysis more manageable.
           </p>
         </section>
       </main>
