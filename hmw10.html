@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrals</title>
+    <style>
+      #text {
+        font-family: Arial, sans-serif; /* Font più leggibile */
+        font-size: 18px; /* Imposta una dimensione del font più grande */
+        line-height: 1.6; /* Aumenta l'interlinea per migliorare la leggibilità */
+        color: #333; /* Colore del testo più scuro per contrasto */
+        background-color: #f9f9f9; /* Colore di sfondo chiaro */
+        padding: 20px; /* Distanza dal bordo */
+        border-radius: 8px; /* Angoli arrotondati */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leggera ombra per effetto di profondità */
+        max-width: 800px; /* Larghezza massima per mantenere il testo compatto */
+        margin: 20px auto; /* Centra il contenuto con margine superiore e inferiore */
+        white-space: pre-wrap; /* Mantiene il formato del testo e delle righe */
+      }
+        section {
+        max-width: 800px; /* Set a max width for the content */
+        margin: 0 auto; /* Center the section horizontally */
+        padding: 20px; /* Add padding around the section */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="home()">home</button>
+      <div class="sopra">
+        <h1 id="welcomeMessage">
+          General concept of sampling mean and variance and main features of
+          their distributions
+        </h1>
+        <section>
+          <p>
+          The code calculates two types of integrals (Lebesgue and Riemann integrals) for different mathematical functions and displays the results in a web page. Normal Distribution Function: The first function calculates the value of a normal distribution at any given point. The normal distribution is a common probability distribution that describes many natural phenomena. Quadratic Function: The second function calculates the square of a number (e.g., x^2). Sine Function: The third function calculates the sine of a number, which is a trigonometric function often used in physics and engineering. Lebesgue Integral: This is a way to calculate the area under the curve of a function by dividing the area into small pieces and adding them up. The smaller the pieces, the more accurate the result. Riemann Integral: This is another way to calculate the area under the curve. It's similar to the Lebesgue integral but uses a slightly different approach to break down the area. The code runs these functions over a specific range of values and calculates the two types of integrals for each function. Then, it formats the results nicely and displays them in a paragraph on the web page. The results include the value of the integrals, formatted to a precise number of decimal places.
+          </p>
+        </section>
+        <p id="text"></p>
+        
+    </div>
+    <div class="containerimg">
+      <p>
+        Per visionare il codice, andare al link della
+        <a href="https://github.com/fortigate3600/statistics2024">repository</a>
+        di github, specificatamente il javascript di questa pagina si trova
+        <a
+          href="https://github.com/fortigate3600/statistics2024/blob/main/script10.js"
+          >qui</a
+        >
+      </p>
+    </div>
+
+    <div>
+      <header>
+        <h1>
+          Theory/Research
+        </h1>
+      </header>
+      <main>
+        <section>
+          <h1>
+            General Concept of Sampling Mean and Variance and Main Features of
+            Their Distributions
+          </h1>
+          <p>
+            The sampling mean and variance are fundamental concepts in
+            statistics that provide insight into the characteristics of a
+            dataset drawn from a population. The sampling mean is the average of
+            the observed values in a sample, serving as an unbiased estimator of
+            the population mean under random sampling. The sampling variance
+            quantifies the spread of the data in the sample, representing the
+            variability of observations around the sampling mean. Importantly,
+            when samples are independently and identically distributed, the
+            sampling distribution of the mean approximates a normal distribution
+            as sample size increases, as described by the Central Limit Theorem.
+            This property underpins many statistical methods and ensures
+            reliable inference, with smaller variance for larger samples,
+            highlighting the trade-off between precision and sample size.
+          </p>
+        </section>
+      </main>
+      <main>
+        <section>
+          <p>
+            <h1>
+              General Idea of Lebesgue–Stieltjes Integration and Applications to
+              Probability and Measure Theory
+            </h1>
+            The Lebesgue–Stieltjes integral generalizes the Riemann integral,
+            extending its applicability to more complex functions and measures.
+            It is defined with respect to a non-decreasing function, allowing
+            integration in terms of arbitrary measures rather than just length
+            or volume. In probability theory, the Lebesgue–Stieltjes integral is
+            used to define expectations of random variables concerning
+            cumulative distribution functions, accommodating both discrete and
+            continuous distributions. In measure theory, it serves as a
+            cornerstone for unifying different notions of integration, enabling
+            the treatment of singular and mixed measures. This versatility makes
+            it a powerful tool for rigorous mathematical analysis across
+            disciplines such as stochastic processes, functional analysis, and
+            financial mathematics.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script10.js"></script>
+</html>
